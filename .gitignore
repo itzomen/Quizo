@@ -1,2 +1,2 @@
-.vscode
-django/db.sqlite3
+*.vscode
+README.md
