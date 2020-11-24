@@ -16,7 +16,7 @@ class Quizzes(models.Model):
     )
 
     category = models.ForeignKey(
-        Category, default=1, on_delete=models.DO_NOTHING)
+        Category, default=1, on_delete=models.DO_NOTHING
     )
     
     date_created = models.DateTimeField(auto_now_add=True)
@@ -55,7 +55,7 @@ class Questions(Updated):
     )
 
     quiz = models.ForeignKey(
-        Quizzes, related_name='question', on_delete=models.DO_NOTHING)
+        Quizzes, related_name='question', on_delete=models.DO_NOTHING
     )
     technique = models.IntegerField(
         choices=TYPE, default=0,verbose_name=_("Question Type")
@@ -77,7 +77,7 @@ class Questions(Updated):
 
 class Answer(Updated):
     question = models.ForeignKey(
-        Questions, related_name='answer', on_delete=models.DO_NOTHING)
+        Questions, related_name='answer', on_delete=models.DO_NOTHING
     )
 
     answer_text = models.CharField(
