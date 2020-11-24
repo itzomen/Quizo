@@ -1,0 +1,13 @@
+asgiref==3.3.1
+astroid==2.4.2
+Django==3.1.3
+djangorestframework==3.12.2
+isort==5.6.4
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+pylint==2.6.0
+pytz==2020.4
+six==1.15.0
+sqlparse==0.4.1
+toml==0.10.2
+wrapt==1.12.1
