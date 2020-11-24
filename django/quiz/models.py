@@ -12,7 +12,7 @@ class Category(models.Model):
 class Quizzes(models.Model):
     
     title = models.CharField(
-        max_length = 250,default=_("New Qiuz"), verbose_name=_("Quiz Title")
+        max_length = 250, default=_("New Qiuz"), verbose_name=_("Quiz Title")
     )
 
     category = models.ForeignKey(
@@ -57,13 +57,16 @@ class Questions(Updated):
     quiz = models.ForeignKey(
         Quizzes, related_name='question', on_delete=models.DO_NOTHING
     )
+    title = models.CharField(
+        max_length = 250, default=_("New Title"), verbose_name=_("Title")
+    )
     technique = models.IntegerField(
         choices=TYPE, default=0,verbose_name=_("Question Type")
     )
     difficulty = models.IntegerField(
         choices=SCALE, default=0,verbose_name=_("Difficulty")
     )
-    date_created = models.DateTimeField(
+    date_updated = models.DateTimeField(
         auto_now_add=True,verbose_name=_("Date Created")
     )
     is_active = models.BooleanField(
