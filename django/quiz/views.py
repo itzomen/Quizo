@@ -1,9 +1,18 @@
 from rest_framework import generics
-from .models import Quizzes
-from .serializers import QuizSerializer
+from rest_framework.response import Response
+from .models import Quizzes, Questions
+from .serializers import QuizSerializer, RandomQuestionSerializer
+from rest_framework.views import APIView
 
 
 class Quiz(generics.ListAPIView):
 
     serializer_class = QuizSerializer
     queryset = Quizzes.objects.all()
+
+class RandomQuestion(APIView):
+
+    def get(self, request, format=None, **kwargs):
+        question = Questions.objects.filter(quiz__title=kwargs['topic']).order_by('?')[:1]
+        serializer = RandomQuestionSerializer(question, many=True)
+        return Response(serializer.data)
