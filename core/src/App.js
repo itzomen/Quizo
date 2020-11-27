@@ -1,11 +1,14 @@
-import React from 'react'
-import Header from './components/framework/Header'
+import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import SelectQuiz from './components/SelectQuiz';
 
 function App() {
   return (
-    <React.Fragment>
-      <Header />
-    </React.Fragment>
+    <Router>
+      <Switch>
+        <Route path="/" component={ SelectQuiz }></Route>
+      </Switch>
+    </Router>
   );
 }
 
