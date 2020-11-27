@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import SelectQuiz from './components/SelectQuiz';
+import SelectQuiz from "./components/SelectQuiz";
 
 function App() {
   return (
