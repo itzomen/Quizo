@@ -100,7 +100,33 @@ const [answerCheck, setAnswerCheck] = useState();
 
     }
 
-    
+    function refreshPage() {
+        window.location.reload(false);
+    }
+
+    function Result() {
+        if (answerCheck === true) {
+          return (
+            <Alert severity="success">
+              <AlertTitle>Corrent Answer</AlertTitle>
+              Well done you got it right —{" "}
+              <Link href="#" variant="body2" onClick={refreshPage}>
+                {"Next Question"}
+              </Link>
+            </Alert>
+          );
+        } else if (answerCheck === false) {
+          return (
+            <Alert severity="error">
+              <AlertTitle>Wrong Answer</AlertTitle>
+              Please try again!
+            </Alert>
+          );
+        } else {
+          return <React.Fragment></React.Fragment>;
+        }
+    }
+
 
 
 return (
@@ -137,7 +163,7 @@ return (
                     >
                         Submit Answer
                     </Button>
-                    
+                    <Result />
                     </div>
                 ))}
                 </div>
