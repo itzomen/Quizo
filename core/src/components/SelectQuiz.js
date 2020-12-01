@@ -3,20 +3,15 @@ import Header from "./framework/Header";
 import Footer from "./framework/Footer"
 import ApiConnect from "../api/ApiConnect";
 
-import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
     '@global': {
@@ -39,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1, 1.5),
     },
     heroContent: {
-      padding: theme.spacing(8, 0, 6),
+      padding: theme.spacing(2, 0, 6),
     },
     cardHeader: {
       backgroundColor:
